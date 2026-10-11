@@ -192,7 +192,7 @@ namespace FPC_CPP.Editor
             ActualizarListaJSON();
 
             wantsMouseMove = true;
-            titleContent = new GUIContent(ES ? "FPC CPP - Window Inspector" : "FPC CPP — Window Inspector");
+            titleContent = new GUIContent(ES ? "FPC CPP - Window Inspector" : "FPC CPP - Window Inspector");
 
             EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
 
@@ -455,10 +455,7 @@ namespace FPC_CPP.Editor
             GUI.Label(new Rect(cx - 160f, cy - 60f, 620f, 60f), titulo, StTitulo);
             GUI.Label(new Rect(cx - 160f, cy - 24f, 620f, 80f), sub, StLabelSub);
 
-            Cfg = (PlayerConfiguration_ConfiguracionDelJugador)EditorGUI.ObjectField(
-                new Rect(cx - 162f, cy + 44f, 320f, 22f),
-                ES ? "Asset_SO:" : "Asset_SO:", Cfg,
-                typeof(PlayerConfiguration_ConfiguracionDelJugador), false);
+            Cfg = (PlayerConfiguration_ConfiguracionDelJugador)EditorGUI.ObjectField(new Rect(cx - 162f, cy + 44f, 320f, 22f), ES ? "Asset_SO:" : "Asset_SO:", Cfg, typeof(PlayerConfiguration_ConfiguracionDelJugador), false);
 
             if (Cfg != null)
                 AsignarAsset(Cfg);
@@ -819,8 +816,8 @@ namespace FPC_CPP.Editor
         #region DOCK  /  DOCK
         // ════════════════════════════════════════════════════════════════════════════════════════════
 
-        private static readonly string[] _dockGrupoES = { "CPP - Configuration_Configuracion", "CPP — Guardar Configuration_Configuracion", "Documentación", "Créditos" };
-        private static readonly string[] _dockGrupoEN = { "FPC — Configuration_Configuracion", "FPC — Save Configuration_Configuracion", "Documentation", "Credits" };
+        private static readonly string[] _dockGrupoES = { "CPP - Configuracion", "CPP - Guardar Configuracion", "Documentación", "Créditos" };
+        private static readonly string[] _dockGrupoEN = { "FPC - Configuration", "FPC - Save Configuration", "Documentation", "Credits" };
         private static readonly int[][] _dockGrupoIDs = { new[] { B_MECBASE, B_MECAVZ, B_CAMARA, B_INPUT }, new[] { B_SAVE }, new[] { B_DOCS }, new[] { B_CREDITS }, };
 
         private void DibujarDock(Rect rectDock)
